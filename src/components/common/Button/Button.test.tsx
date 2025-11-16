@@ -31,9 +31,7 @@ describe('Button Component', () => {
   });
 
   it('passes extra props like aria-label', () => {
-    render(
-      <Button aria-label="custom-button">Test</Button>
-    );
+    render(<Button aria-label="custom-button">Test</Button>);
     const button = screen.getByLabelText('custom-button');
     expect(button).toBeInTheDocument();
   });

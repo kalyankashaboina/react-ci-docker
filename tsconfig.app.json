@@ -23,8 +23,8 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-// alias imports
- "baseUrl": ".",
+    // alias imports
+    "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],
       "@pages/*": ["src/pages/*"],
@@ -34,9 +34,8 @@
       "@services/*": ["src/services/*"],
       "@constants/*": ["src/constants/*"],
       "@assets/*": ["src/assets/*"],
-      "@router/*":["src/router/*"]
+      "@router/*": ["src/router/*"]
     }
-
   },
   "include": ["src"]
 }

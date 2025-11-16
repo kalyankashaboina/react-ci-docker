@@ -14,7 +14,9 @@ describe('Home Component', () => {
 
     expect(screen.getByText(/React \+ TypeScript Starter Kit/i)).toBeInTheDocument();
     expect(
-      screen.getByText(/Build production-ready apps fast with Vite, Redux Toolkit, SCSS, ESLint, Prettier, and professional architecture./i)
+      screen.getByText(
+        /Build production-ready apps fast with Vite, Redux Toolkit, SCSS, ESLint, Prettier, and professional architecture./i,
+      ),
     ).toBeInTheDocument();
 
     expect(screen.getByRole('button', { name: /Get Started/i })).toBeInTheDocument();
@@ -58,8 +60,7 @@ describe('Home Component', () => {
       expect(elements.length).toBeGreaterThan(0);
     });
 
-   const githubLinks = screen.getAllByRole('link', { name: /GitHub/i });
-expect(githubLinks.length).toBeGreaterThan(0);
-
+    const githubLinks = screen.getAllByRole('link', { name: /GitHub/i });
+    expect(githubLinks.length).toBeGreaterThan(0);
   });
 });

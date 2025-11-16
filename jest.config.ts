@@ -7,10 +7,7 @@ const config: Config = {
   // Allow Jest to see files across src
   roots: ['<rootDir>/src'],
 
-  testMatch: [
-    '**/__tests__/**/*.(ts|tsx|js)',
-    '**/?(*.)+(spec|test).(ts|tsx|js)',
-  ],
+  testMatch: ['**/__tests__/**/*.(ts|tsx|js)', '**/?(*.)+(spec|test).(ts|tsx|js)'],
 
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
 
@@ -40,7 +37,6 @@ const config: Config = {
     '^@assets/(.*)$': '<rootDir>/src/assets/$1',
     '^@types/(.*)$': '<rootDir>/src/types/$1',
     '^@router/(.*)$': '<rootDir>/src/router/$1',
-
   },
 
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],

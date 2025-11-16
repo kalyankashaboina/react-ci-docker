@@ -15,12 +15,12 @@ export default defineConfig({
       '@constants': path.resolve(__dirname, 'src/constants'),
       '@assets': path.resolve(__dirname, 'src/assets'),
       '@router': path.resolve(__dirname, 'src/router'),
-      '@types': path.resolve(__dirname, 'src/types'), 
+      '@types': path.resolve(__dirname, 'src/types'),
     },
   },
   css: {
     preprocessorOptions: {
-        scss: {
+      scss: {
         // This is the most robust way to make globals available to every component.
         // It ensures the color module, variables, and mixins are all available.
         additionalData: `

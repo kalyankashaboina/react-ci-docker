@@ -13,9 +13,9 @@ A production-ready, enterprise-grade starter template for building scalable and 
 
 This template is built upon a component-based architecture and adheres to industry best practices. Our guiding principles are:
 
--   **Scalability:** A clear and logical structure that can grow to support complex applications.
--   **Maintainability:** Enforcing code consistency and readability through strict linting, formatting, and clear architectural patterns.
--   **Developer Experience:** A streamlined setup with pre-configured tools to maximize productivity and minimize configuration overhead.
+- **Scalability:** A clear and logical structure that can grow to support complex applications.
+- **Maintainability:** Enforcing code consistency and readability through strict linting, formatting, and clear architectural patterns.
+- **Developer Experience:** A streamlined setup with pre-configured tools to maximize productivity and minimize configuration overhead.
 
 For a detailed explanation of our technical choices and structure, please see our **[Architecture Guide](./ARCHITECTURE.md)**.
 
@@ -23,16 +23,16 @@ For a detailed explanation of our technical choices and structure, please see ou
 
 ## Features
 
-| Category             | Feature                                                              |
-| -------------------- | -------------------------------------------------------------------- |
-| **Core Framework**   | Vite 5, React 18, TypeScript 5                                       |
+| Category             | Feature                                                                    |
+| -------------------- | -------------------------------------------------------------------------- |
+| **Core Framework**   | Vite 5, React 18, TypeScript 5                                             |
 | **State Management** | Redux Toolkit (RTK) with pre-typed `useAppSelector`/`useAppDispatch` hooks |
-| **Styling**          | SCSS with CSS Modules & BEM-style nesting for scoped styles           |
-| **Routing**          | React Router v6                                                      |
-| **Testing**          | Jest & React Testing Library for unit and integration tests          |
-| **Code Quality**     | ESLint & Prettier configured to work together                        |
-| **Git Hooks**        | Husky & lint-staged for pre-commit linting and formatting            |
-| **Imports**          | Absolute path aliases (`@components`, `@store`, etc.)                |
+| **Styling**          | SCSS with CSS Modules & BEM-style nesting for scoped styles                |
+| **Routing**          | React Router v6                                                            |
+| **Testing**          | Jest & React Testing Library for unit and integration tests                |
+| **Code Quality**     | ESLint & Prettier configured to work together                              |
+| **Git Hooks**        | Husky & lint-staged for pre-commit linting and formatting                  |
+| **Imports**          | Absolute path aliases (`@components`, `@store`, etc.)                      |
 
 ---
 
@@ -40,12 +40,13 @@ For a detailed explanation of our technical choices and structure, please see ou
 
 ### Prerequisites
 
--   Node.js (LTS version recommended)
--   npm or yarn
+- Node.js (LTS version recommended)
+- npm or yarn
 
 ### Installation
 
 1.  **Clone the repository:**
+
     ```bash
     git clone <repository-url> your-project-name
     cd your-project-name
@@ -60,13 +61,13 @@ For a detailed explanation of our technical choices and structure, please see ou
 
 ## Available Scripts
 
-| Script        | Description                                                      |
-| ------------- | ---------------------------------------------------------------- |
-| `npm run dev`   | Starts the development server with Hot Module Replacement (HMR). |
-| `npm run build` | Compiles and bundles the application for production.             |
-| `npm run test`  | Runs the unit and integration test suite via Jest.               |
-| `npm run lint`  | Analyzes code for linting errors and warnings.                   |
-| `npm run format`| Formats the entire codebase using Prettier.                      |
+| Script           | Description                                                      |
+| ---------------- | ---------------------------------------------------------------- |
+| `npm run dev`    | Starts the development server with Hot Module Replacement (HMR). |
+| `npm run build`  | Compiles and bundles the application for production.             |
+| `npm run test`   | Runs the unit and integration test suite via Jest.               |
+| `npm run lint`   | Analyzes code for linting errors and warnings.                   |
+| `npm run format` | Formats the entire codebase using Prettier.                      |
 
 ---
 
