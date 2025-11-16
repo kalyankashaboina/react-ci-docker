@@ -47,7 +47,7 @@ const Home: React.FC = () => {
           ))}
         </div>
       </section>
-      {/* cheking chages */}
+
 
       {/* Tools & Best Practices Section */}
       <section className={`${styles.home__tools} ${styles.fadeIn}`} data-testid="tools-section">
