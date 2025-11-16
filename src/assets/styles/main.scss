@@ -1,4 +1,7 @@
-/* A simple CSS reset and global styles */
+
+@use './index' as *;
+
+
 *,
 *::before,
 *::after {
@@ -7,8 +10,9 @@
 
 body {
   margin: 0;
-  font-family: $font-family;
+  font-family: $font-family; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f0f2f5;
+  background-color: $background-color;
+  color: $dark-text;
 }

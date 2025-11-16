@@ -20,12 +20,13 @@ export default defineConfig({
   },
   css: {
     preprocessorOptions: {
-      scss: {
-        // Use @forward to make variables and mixins available globally
-        // This is the modern replacement for @import
+        scss: {
+        // This is the most robust way to make globals available to every component.
+        // It ensures the color module, variables, and mixins are all available.
         additionalData: `
-          @forward "@assets/styles/_variables.scss";
-          @forward "@assets/styles/_mixins.scss";
+          @use "sass:color";
+          @use "@assets/styles/_variables.scss" as *;
+          @use "@assets/styles/_mixins.scss" as *;
         `,
       },
     },

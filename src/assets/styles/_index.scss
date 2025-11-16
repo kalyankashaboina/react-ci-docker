@@ -1,0 +1,6 @@
+// _index.scss
+@use "sass:color";
+
+// Forward variables and mixins
+@forward "./_variables";
+@forward "./_mixins";
