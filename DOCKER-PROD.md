@@ -27,7 +27,7 @@ This builds your app and creates the production image.
 
 ## For PRODUCTION (built files, no dev logs)
 
-docker run -it -p 80:80 my-vite-app
+docker run -it -p 80:80 my-app-prod
 
 ## Run the Container
 

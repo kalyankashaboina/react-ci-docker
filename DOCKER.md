@@ -84,6 +84,12 @@ docker stop my-app-dev
 docker ps
 ```
 
+## View All Containers (running + stopped)
+
+```bash
+docker ps -a
+```
+
 ### View Logs
 
 ```bash
@@ -104,15 +110,42 @@ docker exec my-app-dev npm run lint
 docker exec my-app-dev npm run build
 ```
 
-### Clean Up
+## 🧹 Clean Up (Delete Containers & Images)
+
+## 1. Check all containers
 
 ```bash
-# Stop and remove container
+docker ps -a
+```
+
+## 2. Remove container (by name OR ID)
+
+```bash
 docker stop my-app-dev
 docker rm my-app-dev
+# or using container ID:
+docker rm <container-id>
+docker rm <container-id>
+```
 
-# Remove image
+## 3. Remove the image
+
+```bash
 docker rmi my-app-dev:latest
+# or using image ID:
+docker rmi <image-id>
+```
+
+## 4. Remove ALL unused images (optional)
+
+```bash
+docker image prune -a
+```
+
+## 5. Full cleanup (containers + images + networks)
+
+```bash
+docker system prune -a
 ```
 
 ---
