@@ -12,7 +12,8 @@
       "@constants/*": ["src/constants/*"],
       "@assets/*": ["src/assets/*"],
       "@router/*": ["src/router/*"],
-      "@types/*": ["src/types/*"]
+      "@types/*": ["src/types/*"],
+      "@styles/*": ["src/assets/styles/*"]
     },
     "jsx": "react-jsx",
     "esModuleInterop": true,

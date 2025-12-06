@@ -17,22 +17,21 @@
   }
 
   .fadeIn {
-    animation: fadeInUp 1s ease forwards;
+    @include fade-in-up(1s);
   }
+
   .fadeInUp {
-    animation: fadeInUp 0.8s ease forwards;
+    @include fade-in-up(0.8s);
   }
 
   // --- Hero Section ---
   &__hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex-col-center;
     text-align: center;
     padding: $spacing-xl 2rem;
     background-color: $primary-color;
     color: $light-text;
-    animation: fadeInUp 1s ease forwards;
+    @include fade-in-up(1s);
 
     &Title {
       font-size: 3rem;
@@ -49,7 +48,7 @@
     }
 
     &Cta {
-      display: flex;
+      @include flex-center;
       gap: $spacing-md;
       margin-top: $spacing-lg;
     }
@@ -68,9 +67,8 @@
     }
 
     &Cards {
-      display: flex;
+      @include flex-center;
       flex-wrap: wrap;
-      justify-content: center;
       gap: $spacing-lg;
     }
 
@@ -81,15 +79,12 @@
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
       width: 300px;
       text-align: center;
-      transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        background 0.3s ease;
-      animation: fadeInUp 0.8s ease forwards;
+      @include smooth-card-transition;
+      @include fade-in-up(0.8s);
+
+      @include hover-elevate(-8px, 0.12);
 
       &:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
         background: color.scale($card-bg-color, $lightness: 8%);
       }
 
@@ -125,34 +120,29 @@
     }
 
     &Cards {
-      display: flex;
+      @include flex-center;
       flex-wrap: wrap;
-      justify-content: center;
       gap: $spacing-md;
     }
 
     &Card {
-      background: $primary-color; // solid color for all tools
+      @include flex-between;
+      background: $primary-color;
       color: $light-text;
       padding: $spacing-md $spacing-lg;
       border-radius: 16px;
       font-weight: 600;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       gap: $spacing-sm;
       min-width: 220px;
-      transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        background 0.3s ease;
+      @include smooth-card-transition;
       cursor: pointer;
+
+      @include hover-elevate(-6px, 0.15);
 
       a {
         color: $light-text;
         text-decoration: none;
-        display: flex;
-        align-items: center;
+        @include flex-center;
         gap: 6px;
         font-weight: bold;
 
@@ -166,8 +156,6 @@
       }
 
       &:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         background: color.scale($primary-color, $lightness: 10%);
       }
     }
@@ -175,17 +163,14 @@
 
   // --- Call to Action Section ---
   &__cta {
+    @include flex-center;
     text-align: center;
     padding: $spacing-xl 2rem;
-    display: flex;
-    justify-content: center;
     gap: $spacing-md;
 
     .button {
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.2s ease;
+      @include smooth-button-transition;
+
       &:hover {
         transform: translateY(-3px);
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
