@@ -2,11 +2,28 @@
 
 This document provides a comprehensive overview of the architectural decisions, patterns, folder structure, and coding conventions that govern this project. Its purpose is to ensure consistency and maintain a high standard of quality as the application evolves.
 
+**Related Documentation:**
+
+- **[SDLC-STANDARDS.md](./SDLC-STANDARDS.md)** - SDLC principles, testing, security, deployment
+- **[CONTRIBUTING.md](./CONTRIBUTING.md)** - Development workflow, PR process
+- **[GETTING-STARTED.md](./GETTING-STARTED.md)** - Setup and onboarding
+- **[DOCKER.md](./DOCKER.md)** - Containerization and orchestration
+
 ---
 
 ## 🎯 Guiding Principles
 
-Our architecture is founded on principles that promote a clean, scalable, and maintainable codebase.
+Our architecture is founded on principles that promote a clean, scalable, and maintainable codebase built for growth.
+
+### Scalability First
+
+This template is designed to scale from single-developer projects to enterprise-level applications with 50+ developers:
+
+- **Modular Structure:** Domain-based organization that prevents code entanglement
+- **Clear Boundaries:** Feature slices with independent state management
+- **Team-Friendly:** Clear naming conventions and patterns enable rapid onboarding
+- **Monorepo-Ready:** Can be extended to monorepo setups (Nx, Turborepo)
+- **Microservices-Compatible:** Service layer abstraction enables backend migration
 
 ### DRY (Don't Repeat Yourself)
 
@@ -722,3 +739,92 @@ describe('Button Component', () => {
 - [React Testing Library](https://testing-library.com/react)
 - [CSS Modules](https://github.com/css-modules/css-modules)
 - [BEM Methodology](http://getbem.com/)
+
+---
+
+## 🚀 Scaling Your Application
+
+### Phase 1: Team Growth (5-10 developers)
+
+**Focus:** Consistency and clear communication
+
+- ✅ Enforce ESLint and Prettier via pre-commit hooks
+- ✅ Require tests for all new features (80%+ coverage)
+- ✅ Establish code review process (1+ approval)
+- ✅ Document architectural decisions in ADRs (Architecture Decision Records)
+- ✅ Setup CI/CD pipeline for automated testing
+
+### Phase 2: Feature Scaling (10-30 developers)
+
+**Focus:** Modular architecture and state management
+
+- ✅ Split Redux slices by feature domains
+- ✅ Implement API versioning (`/api/v1/`, `/api/v2/`)
+- ✅ Add feature flags for A/B testing
+- ✅ Implement code splitting and lazy loading
+- ✅ Setup performance monitoring (Sentry, DataDog)
+- ✅ Create shared component library (`@components/`)
+
+### Phase 3: Enterprise Scale (30+ developers)
+
+**Focus:** Monorepo and microfrontends
+
+- ✅ Migrate to monorepo (Nx, Turborepo, pnpm workspaces)
+- ✅ Separate concerns: UI, business logic, API
+- ✅ Implement microfrontend architecture
+- ✅ Setup advanced CI/CD (parallel builds, caching)
+- ✅ Implement design system versioning
+- ✅ Multi-region deployment strategy
+
+### Performance Optimization Checklist
+
+| Item                | Impact         | Priority | Status |
+| ------------------- | -------------- | -------- | ------ |
+| Code splitting      | ⬇️ 40% bundle  | High     | - [ ]  |
+| Image optimization  | ⬇️ 30% assets  | High     | - [ ]  |
+| Lazy loading routes | ⬇️ 50% LCP     | High     | - [ ]  |
+| Service worker      | ⬆️ 2x faster   | Medium   | - [ ]  |
+| CDN caching         | ⬇️ 60% latency | Medium   | - [ ]  |
+| HTTP/2 push         | ⬆️ 15% perf    | Medium   | - [ ]  |
+| Compression (gzip)  | ⬇️ 70% size    | High     | - [ ]  |
+
+### Deployment at Scale
+
+**Development:**
+
+```
+Local Dev → Docker Container → Vite HMR → Browser
+```
+
+**Production:**
+
+```
+Source Code → Git → CI/CD Pipeline → Docker Build → Registry
+  ↓
+Docker Compose → Kubernetes → Load Balancer → CDN → Users
+```
+
+See [DOCKER.md](./DOCKER.md) and [DOCKER-PROD.md](./DOCKER-PROD.md) for detailed deployment strategies.
+
+---
+
+## 📈 Monitoring & Observability
+
+As your application scales, implement:
+
+1. **Error Tracking:** Sentry, Rollbar
+2. **Performance Monitoring:** DataDog, New Relic, Grafana
+3. **Analytics:** Mixpanel, Amplitude, Google Analytics
+4. **Logging:** ELK Stack, CloudWatch, Splunk
+5. **Health Checks:** Uptime monitoring, synthetic tests
+6. **Alerting:** PagerDuty, OpsGenie for on-call rotation
+
+**Recommended metrics to track:**
+
+- Page Load Time (LCP, FCP, CLS)
+- Error Rate (exceptions per second)
+- API Response Time (p50, p95, p99)
+- User Count (daily, monthly)
+- Deployment Frequency
+- Lead Time for Changes
+- Mean Time to Recovery (MTTR)

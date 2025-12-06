@@ -5,21 +5,43 @@
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Code Style: Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)
 
-A production-ready, enterprise-grade starter template for building scalable and maintainable web applications. This repository provides a robust foundation with a focus on developer experience, code quality, and performance.
+A **production-ready, enterprise-grade starter template** for building scalable and maintainable web applications. Built with Vite, React, and TypeScript, this template provides a robust foundation with focus on SDLC principles, developer experience, code quality, and performance.
+
+**Perfect for:**
+
+✅ Scalable applications (not just small projects)  
+✅ Teams following SDLC standards (DRY, KISS, SOLID)  
+✅ Enterprise-grade requirements  
+✅ Microservice-ready architecture  
+✅ Monorepo integration  
+✅ Multi-environment deployments
 
 ---
 
 ## 🎯 Core Philosophy
 
-This template is built upon a component-based architecture and adheres to industry best practices. Our guiding principles are:
+This template is built upon a component-based architecture and adheres to **SDLC best practices**. Our guiding principles are:
 
-- **Scalability:** A clear and logical structure that can grow to support complex applications.
-- **Maintainability:** Enforcing code consistency and readability through strict linting, formatting, and clear architectural patterns.
-- **Developer Experience:** A streamlined setup with pre-configured tools to maximize productivity and minimize configuration overhead.
-- **DRY (Don't Repeat Yourself):** Abstracting common logic into reusable utilities, hooks, and components.
-- **KISS (Keep It Simple, Stupid):** Prioritizing simplicity and clarity over complex abstractions.
+- **Scalability:** Domain-driven, feature-based structure that grows with complexity
+- **Maintainability:** Enforcing code consistency through linting, formatting, and clear architectural patterns
+- **Developer Experience:** Pre-configured tools, comprehensive documentation, and onboarding guides
+- **DRY (Don't Repeat Yourself):** Abstracting common logic into reusable utilities, hooks, components, and services
+- **KISS (Keep It Simple, Stupid):** Prioritizing simplicity and clarity over unnecessary complexity
+- **SOLID Principles:** Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion
 
-For a detailed explanation of our technical choices, architecture decisions, and coding conventions, please see our **[Architecture Guide](./ARCHITECTURE.md)**.
+**Learn more:** See [SDLC-STANDARDS.md](./SDLC-STANDARDS.md) for detailed principles and implementation patterns.
+
+---
+
+## 📚 Documentation
+
+| Guide                                    | Purpose                                           | Audience           | Status        |
+| ---------------------------------------- | ------------------------------------------------- | ------------------ | ------------- |
+| **[README.md](./README.md)**             | Project overview, quick setup, and features       | All developers     | ✅ Core guide |
+| **[ARCHITECTURE.md](./ARCHITECTURE.md)** | Project structure, patterns, and conventions      | All developers     | ✅ Essential  |
+| **[CONTRIBUTING.md](./CONTRIBUTING.md)** | Development workflow, PR process, standards       | Contributors       | ✅ Essential  |
+| **[DOCKER.md](./DOCKER.md)**             | Docker development, Docker Compose, orchestration | Developers, DevOps | ✅ Essential  |
+| **[DOCKER-PROD.md](./DOCKER-PROD.md)**   | Production Docker builds, deployment, scaling     | DevOps, Platform   | ✅ Essential  |
 
 ---
 
@@ -35,7 +57,8 @@ For a detailed explanation of our technical choices, architecture decisions, and
 | **Code Quality**     | ESLint & Prettier configured to work together                              |
 | **Git Hooks**        | Husky & lint-staged for pre-commit linting and formatting                  |
 | **Imports**          | Absolute path aliases (`@components`, `@store`, `@hooks`, etc.)            |
-| **Docker Support**   | Dockerfiles for development and production environments                    |
+| **Docker Support**   | Multi-stage Dockerfiles for dev, prod, and orchestration                   |
+| **SDLC Ready**       | Built for scalable applications following industry standards               |
 
 ---
 
@@ -43,38 +66,53 @@ For a detailed explanation of our technical choices, architecture decisions, and
 
 ### Prerequisites
 
-- Node.js 18+ (LTS version recommended)
-- npm or yarn
+- **Node.js 18+ LTS** (recommended 20+) - [Download](https://nodejs.org/)
+- **npm 9+** or **yarn 3+**
+- **Git**
+- **Docker** (for containerized development) - [Download](https://www.docker.com/)
 
-### Installation
+### Quick Setup (Local Development)
 
-1. **Clone the repository:**
+```bash
+# 1. Clone repository
+git clone <repository-url> your-project-name
+cd your-project-name
 
-   ```bash
-   git clone <repository-url> your-project-name
-   cd your-project-name
-   ```
+# 2. Install dependencies
+npm install
 
-2. **Install project dependencies:**
+# 3. Set up environment (copy .env.example or create .env.local)
+cp .env.example .env.local
+# Edit .env.local with your configuration
+# VITE_API_BASE_URL=http://localhost:3000/api
 
-   ```bash
-   npm install
-   ```
+# 4. Start development server with HMR
+npm run dev
+# Access at http://localhost:5173
+```
 
-3. **Set up environment variables:**
+### Setup with Docker
 
-   ```bash
-   cp .env.example .env.local
-   # Edit .env.local with your configuration
-   ```
+```bash
+# Build development image
+docker build -f Dockerfile -t my-app-dev:latest .
 
-4. **Start the development server:**
+# Run with hot reload
+docker run -it -p 5173:5173 \
+  --volume $(pwd):/app \
+  --volume /app/node_modules \
+  my-app-dev:latest
 
-   ```bash
-   npm run dev
-   ```
+# Access at http://localhost:5173
+```
 
-   The application will be available at `http://localhost:5173`.
+### Detailed Setup
+
+For comprehensive setup instructions with environment configuration, database setup, and troubleshooting, refer to the project documentation:
+
+- **[ARCHITECTURE.md](./ARCHITECTURE.md)** - Project structure and patterns
+- **[DOCKER.md](./DOCKER.md)** - Docker development & orchestration
+- **[CONTRIBUTING.md](./CONTRIBUTING.md)** - Team workflows and standards
 
 ---
 
@@ -386,10 +424,22 @@ For detailed Docker instructions, see [README-DOCKER.md](./README-DOCKER.md) and
 
 We welcome contributions! Please read our **[Contributing Guide](./CONTRIBUTING.md)** to learn about:
 
-- Development workflow and branching strategy
-- Commit message conventions
-- Code review process
-- Pull request requirements
+- **Development workflow:** Feature branches, commit conventions
+- **Code standards:** TypeScript, React patterns, SCSS organization
+- **Pull request process:** Testing, linting, review requirements
+- **Git workflow:** Branch naming, merge strategies, deployment
+
+---
+
+## 📊 Project Status
+
+| Component      | Coverage    | Health     | Notes                          |
+| -------------- | ----------- | ---------- | ------------------------------ |
+| **Tests**      | TBD         | 📊 Monitor | Set coverage target: 80%+      |
+| **Build**      | ✅ 0 errors | ✅ Passing | Vite optimized builds          |
+| **Lint**       | ✅ 0 errors | ✅ Passing | ESLint enforced via pre-commit |
+| **Docker**     | ✅ 2 stages | ✅ Tested  | Dev & Production ready         |
+| **Deployment** | ✅ Ready    | ✅ CI/CD   | GitHub Actions / GitLab CI     |
 
 ---
 
@@ -399,11 +449,42 @@ This project is licensed under the MIT License. See the [LICENSE](./LICENSE) fil
 
 ---
 
-## 🔗 Resources
+## 🔗 Resources & Documentation
 
-- [Architecture Guide](./ARCHITECTURE.md) - Detailed architecture decisions and patterns
+**Core Guides:**
+
+- [Architecture Guide](./ARCHITECTURE.md) - Patterns, structure, and best practices
 - [Contributing Guide](./CONTRIBUTING.md) - Development workflow and standards
-- [Vite Documentation](https://vitejs.dev/)
-- [React Documentation](https://react.dev/)
-- [Redux Toolkit Documentation](https://redux-toolkit.js.org/)
-- [React Router Documentation](https://reactrouter.com/)
+- [Docker Guide](./DOCKER.md) - Development, orchestration, and deployment
+- [Production Docker](./DOCKER-PROD.md) - Scaling, performance, and security
+
+**External Resources:**
+
+- [Vite Documentation](https://vitejs.dev/) - Build tool reference
+- [React 19 Documentation](https://react.dev/) - React API and patterns
+- [Redux Toolkit](https://redux-toolkit.js.org/) - State management
+- [React Router v7](https://reactrouter.com/) - Client-side routing
+- [TypeScript Handbook](https://www.typescriptlang.org/docs/) - Type system
+- [Jest Testing](https://jestjs.io/) - Test framework
+- [React Testing Library](https://testing-library.com/react) - Testing utilities
+
+**Performance & Monitoring:**
+
+- [Web Vitals](https://web.dev/vitals/) - Core Web Vitals metrics
+- [Google PageSpeed Insights](https://pagespeed.web.dev/) - Performance analysis
+- [Lighthouse](https://developers.google.com/web/tools/lighthouse) - Auditing tool
+
+---
+
+## 💡 Tips for Scaling
+
+1. **Code Organization:** Follow the domain-based feature structure in `ARCHITECTURE.md`
+2. **State Management:** Use Redux slices per feature to keep state manageable
+3. **API Communication:** Centralize in services layer for consistency
+4. **Performance:** Implement code splitting and lazy loading early
+5. **Testing:** Aim for 80%+ test coverage from the start
+6. **Monitoring:** Set up error tracking and performance monitoring in staging
+7. **Documentation:** Keep this documentation and code comments up-to-date
+8. **Team Size:** Add detailed onboarding when scaling the team
+
+See [ARCHITECTURE.md - Best Practices](./ARCHITECTURE.md#-best-practices-summary) for more details.
