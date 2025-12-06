@@ -15,6 +15,7 @@ export default defineConfig({
       '@store': path.resolve(__dirname, 'src/store'),
       '@services': path.resolve(__dirname, 'src/services'),
       '@constants': path.resolve(__dirname, 'src/constants'),
+      '@styles': path.resolve(__dirname, 'src/styles'),
       '@assets': path.resolve(__dirname, 'src/assets'),
       '@router': path.resolve(__dirname, 'src/router'),
       '@types': path.resolve(__dirname, 'src/types'),
@@ -26,8 +27,8 @@ export default defineConfig({
       scss: {
         additionalData: `
           @use "sass:color";
-          @use "@assets/styles/_variables.scss" as *;
-          @use "@assets/styles/_mixins.scss" as *;
+          @use "@styles/_variables.scss" as *;
+          @use "@styles/_mixins.scss" as *;
         `,
       },
     },

@@ -42,7 +42,7 @@ We enforce the **Conventional Commits** specification. This practice is essentia
     - [ ] Code is free of linting errors (`npm run lint`).
     - [ ] All existing and new tests are passing (`npm run test`).
     - [ ] The branch is up-to-date with the latest `main`.
-    - [ ] The code adheres to all standards outlined in `ARCHITECTURE.md` and `CODE_STYLE.md`.
+    - [ ] The code adheres to all standards outlined in `ARCHITECTURE.md`.
 
 2.  **Opening the PR:**
     - Push your feature branch to the remote repository.
