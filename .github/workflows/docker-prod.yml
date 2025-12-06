@@ -3,7 +3,7 @@ name: Docker Production Image
 on:
   # This workflow runs AFTER "CI/CD Pipeline" finishes
   workflow_run:
-    workflows: ["CI/CD Pipeline"]
+    workflows: ['CI/CD Pipeline']
     types:
       - completed
 
