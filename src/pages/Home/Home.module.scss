@@ -107,6 +107,59 @@
     }
   }
 
+  // --- DevOps & CI/CD Section ---
+  &__devops {
+    padding: $spacing-xl 2rem;
+    text-align: center;
+    background-color: $background-color;
+
+    &Title {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: $spacing-lg;
+    }
+
+    &Cards {
+      @include flex-center;
+      flex-wrap: wrap;
+      gap: $spacing-lg;
+    }
+
+    &Card {
+      background: $card-bg-color;
+      padding: $spacing-lg;
+      border-radius: 14px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+      width: 300px;
+      text-align: center;
+      @include smooth-card-transition;
+      @include fade-in-up(0.8s);
+
+      @include hover-elevate(-8px, 0.12);
+
+      &:hover {
+        background: color.scale($card-bg-color, $lightness: 8%);
+      }
+
+      &Icon {
+        font-size: 2.7rem;
+        color: $primary-color;
+        margin-bottom: $spacing-md;
+      }
+
+      h3 {
+        margin: $spacing-sm 0;
+        font-weight: 600;
+      }
+
+      p {
+        color: $text-color-muted;
+        font-size: 0.95rem;
+        line-height: 1.4;
+      }
+    }
+  }
+
   // --- Tools / Best Practices Section ---
   &__tools {
     padding: $spacing-xl 2rem;
@@ -181,6 +234,7 @@
   // --- Responsive ---
   @media (max-width: 768px) {
     &__featuresCards,
+    &__devopsCards,
     &__toolsCards {
       flex-direction: column;
       align-items: center;
@@ -196,6 +250,7 @@
     }
 
     &__featuresCard,
+    &__devopsCard,
     &__toolsCard {
       width: 90%;
     }

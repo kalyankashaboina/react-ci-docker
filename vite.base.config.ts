@@ -24,10 +24,14 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
+        loadPaths: [
+          path.resolve(__dirname, 'src/assets/styles'),
+          path.resolve(__dirname, 'src/styles'),
+        ],
         additionalData: `
           @use "sass:color";
-          @use "@styles/_variables.scss" as *;
-          @use "@styles/_mixins.scss" as *;
+          @use "_variables.scss" as *;
+          @use "_mixins.scss" as *;
         `,
       },
     },
