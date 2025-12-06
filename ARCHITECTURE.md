@@ -4,9 +4,7 @@ This document provides a comprehensive overview of the architectural decisions, 
 
 **Related Documentation:**
 
-- **[SDLC-STANDARDS.md](./SDLC-STANDARDS.md)** - SDLC principles, testing, security, deployment
 - **[CONTRIBUTING.md](./CONTRIBUTING.md)** - Development workflow, PR process
-- **[GETTING-STARTED.md](./GETTING-STARTED.md)** - Setup and onboarding
 - **[DOCKER.md](./DOCKER.md)** - Containerization and orchestration
 
 ---

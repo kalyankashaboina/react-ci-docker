@@ -29,7 +29,7 @@ This template is built upon a component-based architecture and adheres to **SDLC
 - **KISS (Keep It Simple, Stupid):** Prioritizing simplicity and clarity over unnecessary complexity
 - **SOLID Principles:** Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion
 
-**Learn more:** See [SDLC-STANDARDS.md](./SDLC-STANDARDS.md) for detailed principles and implementation patterns.
+**Learn more:** See [SDLC-STANDARDS]for detailed principles and implementation patterns.
 
 ---
 

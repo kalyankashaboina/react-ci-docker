@@ -25,6 +25,10 @@ This builds your app and creates the production image.
 
 ---
 
+## For PRODUCTION (built files, no dev logs)
+
+docker run -it -p 80:80 my-vite-app
+
 ## Run the Container
 
 ```bash

@@ -29,6 +29,10 @@ This creates a Docker image with Node.js and your app ready to run.
 
 ---
 
+## For LOCAL DEV (hot reload, logs visible)
+
+docker run -it -p 5173:5173 my-vite-app
+
 ## Run Locally - Interactive Mode (Recommended)
 
 ```bash
